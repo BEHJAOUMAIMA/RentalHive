@@ -31,7 +31,11 @@ public class EquipmentImplService implements EquipmentService {
 
     @Override
     public Equipment update(Equipment equipmentUpdated) {
-        return equipmentRepository.save(equipmentUpdated);
+        Optional<Equipment> equipment = equipmentRepository.findById(equipmentUpdated.getId());
+        if (equipment.isPresent()){
+            return equipmentRepository.save(equipmentUpdated);
+        }
+        return null;
     }
 
     @Override
