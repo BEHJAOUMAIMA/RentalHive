@@ -37,11 +37,7 @@ public class EquipmentRest {
 
     @PutMapping("/update")
     public Equipment update(@RequestBody @Valid Equipment equipmentUpdated){
-        Optional<Equipment> equipment = equipmentService.findById(equipmentUpdated.getId());
-        if (equipment.isPresent()){
-            return equipmentService.save(equipmentUpdated);
-        }
-        return null;
+        return equipmentService.update(equipmentUpdated);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -43,7 +43,7 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public List<Equipment> findAll() {
+    public List<Equipment> findAll( ) {
         List<Equipment> equipmentList = equipmentRepository.findAll();
 
         if (equipmentList.isEmpty()) {
@@ -54,7 +54,7 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Optional<Equipment> findById(Long id) {
+    public Optional<Equipment> findById(@Valid Long id) {
         Optional<Equipment> equipmentOptional = equipmentRepository.findById(id);
 
         if (equipmentOptional.isEmpty()) {
@@ -65,7 +65,7 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Equipment update(Equipment equipmentUpdated) {
+    public Equipment update(@Valid Equipment equipmentUpdated) {
         Long id = equipmentUpdated.getId();
 
         Optional<Equipment> existingEquipmentOptional = equipmentRepository.findById(id);
@@ -90,7 +90,7 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(@Valid Long id) {
         Optional<Equipment> equipmentOptional = findById(id);
 
         if (equipmentOptional.isPresent()) {
