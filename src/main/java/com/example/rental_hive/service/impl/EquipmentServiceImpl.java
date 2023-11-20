@@ -4,14 +4,13 @@ import com.example.rental_hive.domain.Equipment;
 import com.example.rental_hive.repository.EquipmentRepository;
 import com.example.rental_hive.service.EquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
 @Component
-public class EquipmentImplService implements EquipmentService {
+public class EquipmentServiceImpl implements EquipmentService {
 
     @Autowired
     private EquipmentRepository equipmentRepository;

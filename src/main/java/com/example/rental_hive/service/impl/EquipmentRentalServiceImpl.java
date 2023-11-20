@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class EquipmentRentalImplService implements EquipmentRentalService {
+public class EquipmentRentalServiceImpl implements EquipmentRentalService {
 
     @Autowired
     private EquipmentRentalRepository equipmentRentalRepository;
