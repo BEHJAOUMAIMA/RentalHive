@@ -4,10 +4,12 @@ import com.example.rental_hive.domain.Category;
 import com.example.rental_hive.repository.CategoryRepository;
 import com.example.rental_hive.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class CategoryImplService implements CategoryService {
 
     @Autowired

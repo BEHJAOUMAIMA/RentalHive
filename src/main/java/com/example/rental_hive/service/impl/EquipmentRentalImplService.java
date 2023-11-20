@@ -17,7 +17,7 @@ public class EquipmentRentalImplService implements EquipmentRentalService {
 
     @Override
     public EquipmentRental save(EquipmentRental equipmentRental) {
-        return equipmentRentalRepository.save();
+        return equipmentRentalRepository.save(equipmentRental);
     }
 
     @Override

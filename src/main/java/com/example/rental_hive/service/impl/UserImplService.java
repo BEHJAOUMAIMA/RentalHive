@@ -4,10 +4,12 @@ import com.example.rental_hive.domain.User;
 import com.example.rental_hive.repository.UserRepository;
 import com.example.rental_hive.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class UserImplService implements UserService {
 
     @Autowired
