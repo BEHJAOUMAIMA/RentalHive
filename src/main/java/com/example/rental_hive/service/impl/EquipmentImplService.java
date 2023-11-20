@@ -4,6 +4,7 @@ import com.example.rental_hive.domain.Equipment;
 import com.example.rental_hive.repository.EquipmentRepository;
 import com.example.rental_hive.service.EquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class EquipmentImplService implements EquipmentService {
     }
 
     @Override
-    public void delete(Equipment equipment) {
-        equipmentRepository.delete(equipment);
+    public void delete(Long id) {
+        findById(id).ifPresent(equipment -> delete(equipment.getId()));
     }
 }
